@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { PageHero, PageJavaScript, PageAPI, PageMarkup } from '../components/pageSections';
+import { PageHero, PageJavaScript, PageAPI, PageMarkup, PageResults, PageFooter } from '../components/pageSections';
 
 
 const Home: NextPage = () => {
@@ -16,6 +16,8 @@ const Home: NextPage = () => {
       <PageJavaScript />
       <PageAPI />
       <PageMarkup />
+      <PageResults />
+      <PageFooter />
     </div>
   )
 }

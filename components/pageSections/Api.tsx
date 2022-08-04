@@ -32,17 +32,17 @@ const CanvasContainer = styled.div`
 	}
 
   &:before {
-		top: calc(50% - 300px);
-    aspect-ratio: 1512 / 214;
-		background-image: url(/assets/svgs/api-squiggly-bg.svg);
+		bottom: 50%;
+    aspect-ratio: 2560 / 364;
+		background-image: url(/assets/images/api-squiggly-bg.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 		z-index: 3;
 	}
 	&:after {
 		background-color: white;
-		bottom: 0%;
-		height: calc(50% + 300px);
+		bottom: 0;
+		height: 50%;
 		z-index: 2;
   }
 `
