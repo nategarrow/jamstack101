@@ -1,58 +1,40 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components';
-import { useCountUp } from 'react-countup';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
-interface ScoreProps {
-  start: number
-  end: number
-  delay: number
-}
-
-const Score = ({ start: startVal = 0, end = 100, delay = 0 }: ScoreProps) => {
-  const ref = useRef(null)
-  // const { start } = useCountUp({
-  //   ref,
-  //   start: startVal,
-  //   end,
-  //   delay,
-  //   duration: 1
-  // })
-
-  // useEffect(() => {
-  //   start()
-  // }, [ref])
-
-  return <div className="flex justify-center items-center">
-    <ScoreSpan ref={ref} className="xl:text-5xl lg:text-4xl text-2xl font-bold text-bright-green">
-      <div style={{ width: 200, height: 200 }}>
-        <CircularProgressbar value={95} text={`100`}
-          styles={buildStyles({
-            rotation: .27,
-            strokeLinecap: 'butt',
-            textColor: '#EFFFE2',
-            pathColor: '#EFFFE2',
-            trailColor: 'rgba(0,0,0,0)',
-
-          })}
-          strokeWidth={2}
-        />
-      </div>
-    </ScoreSpan>
-  </div>
-}
+import Score from "./ScoreCounter"
 
 const PageResults = () => {
+  const resultsRef = useRef<any>(null)
+  const [hasRun, setHasRun] = useState<boolean>(false)
+  const [isOnScreen, setIsOnScreen] = useState<boolean>(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((sections, observer) => {
+      const section = sections[0]
+      if (!hasRun && section.isIntersecting) setIsOnScreen(section.isIntersecting)
+    });
+    observer.observe(resultsRef.current);
+  }, []);
+
+  useEffect(() => {
+    const getDistToTop = () => {
+      const distanceToTop = resultsRef.current.getBoundingClientRect().top;
+      if (distanceToTop <= 650) setHasRun(true)
+    }
+    window.addEventListener('scroll', getDistToTop);
+    return () => window.removeEventListener(`scroll`, getDistToTop)
+  }, [isOnScreen])
+
   return (
-    <section className="relative px-8">
+    <section className="relative px-8" ref={resultsRef}>
       <AuditScoresContainer className="relative -mt-[100px] px-8 lg:py-[140px] md:py-[90px] py-14">
         <h3 className="xl:text-7xl lg:text-5xl text-3xl text-beige text-4xl font-black text-center mb-16">top audit scores</h3>
         <div className="grid gap-4 lg:grid-cols-4 grid-cols-2 lg:my-20 my-14 ">
-          <Score start={60} end={100} delay={0} />
-          <Score start={60} end={100} delay={500} />
-          <Score start={60} end={100} delay={1000} />
-          <Score start={60} end={100} delay={1500} />
+          <Score hasRun={hasRun} start={30} end={100} delay={0} />
+          <Score hasRun={hasRun} start={30} end={100} delay={100} />
+          <Score hasRun={hasRun} start={30} end={100} delay={200} />
+          <Score hasRun={hasRun} start={30} end={100} delay={300} />
         </div>
 
         <DivGradient className="relative">
@@ -78,9 +60,6 @@ const AuditScoresContainer = styled.div`
   border-radius: 60px;
   width: min(1500px, 95%);
   margin-inline: auto;
-`
-const ScoreSpan = styled.span`
-  text-shadow: 0px 0px 12px #53FB2A, 0px 0px 42px #E9E11F, 0px 0px 61px #53FB2A;
 `
 const DivGradient = styled.div`
 // background-image: linear-gradient(165deg, rgb(255,0,0) 5%, rgb(0,255,0) 40%);
