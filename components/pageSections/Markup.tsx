@@ -7,41 +7,39 @@ import RectangleImg from '../RectangleImg';
 
 const PageMarkup = () => {
   return (
-    <Section className="relative bg-white px-8 pt-[150px]">
-      <div className="xl:max-w-[1500px] md:max-w-6xl mx-auto">
-        <div className="grid gap-8 grid-cols-4 auto-rows-max px-20">
-          <h2 className="col-span-3 font-black pl-14">markup</h2>
-          <div className="col-span-2 row-start-2">
-            <p className="text-2xl max-w-[600px] pl-14 leading-relaxed font-normal">
-              When ready for deployment, a static-site generator such as Astro or Next.js is used to
-              compile the website. The end result is a collection of pre-rendered HTML pages that can be
-              delivered lightning-fast over a CDN like Vercel’s Edge Network.
-            </p>
-          </div>
-          <div className='row-start-3 col-start-1 col-span-2 flex flex-col items-center'>
-            <Image src="/assets/images/toppled-blocks.png" alt="Colorful toppled blocks" layout="intrinsic" width={981} height={684} className="w-full max-w-[500px]" />
-          </div>
-          <RectangleImg className="row-start-2 col-start-3 row-span-3">
-            <Image
-              src="/assets/images/rect-blocks-left.png"
-              layout="intrinsic"
-              width={420}
-              height={944}
-              alt="decorative rectangle 1"
-              className="inline-block"
-            />
-          </RectangleImg>
-          <RectangleImg className="row-start-1 col-start-4 row-span-3">
-            <Image
-              src="/assets/images/rect-blocks-right.png"
-              layout="intrinsic"
-              width={417}
-              height={1006}
-              alt="decorative rectangle 2"
-              className="inline-block "
-            />
-          </RectangleImg>
+    <Section className="bg-white isolate overflow-x-hidden mx-auto pb-36 pt-20 px-4 sm:pb-48 md:pb-72 lg:px-8 lg:pt-[100px] xl:pb-96">
+      <div className="grid gap-8 grid-cols-4 auto-rows-max xl:px-20 lx:px-14 px-8 z-10">
+        <div className="row-start-1 col-span-3 font-black lg:pl-10 flex items-center">
+          <h2>
+            markup
+          </h2>
         </div>
+        <div className="flex flex-col justify-start col-span-4 px-4 lg:col-span-2 lg:row-start-2 lg:pl-16 ">
+          <p className=" text-xl leading-relaxed font-normal sm:text-2xl lg:max-w-[600px] lg:mb-[60px] ">
+            When ready for deployment, a static-site generator such as Astro or Next.js is used to
+            compile the website. The end result is a collection of pre-rendered HTML pages that can be
+            delivered lightning-fast over a CDN like Vercel’s Edge Network.
+          </p>
+        </div>
+        <div className='col-start-4 row-start-1 row-span-1 flex flex-col items-center justify-center sm:col-span-1 sm:row-start-1 sm:mt-10 md:col-span-2 md:row-start-3 md:col-start-1 lg:row-span-3'>
+          <Image src="/assets/images/toppled-blocks.png" alt="Colorful toppled blocks" width={981} height={684} className="max-w-[400px]" />
+        </div>
+        <RectangleImg className="col-start-1 row-start-3 col-span-2 lg:mt-0 mt-20 md:col-span-1 lg:row-start-2 lg:row-span-3">
+          <img
+            src="/assets/images/rect-blocks-left.png"
+            width={420}
+            height={944}
+            alt="decorative rectangle 1"
+          />
+        </RectangleImg>
+        <RectangleImg className="row-start-3 col-start-3 col-span-2 md:col-start-4 md:col-span-1 lg:row-start-1 lg:row-span-3">
+          <img
+            src="/assets/images/rect-blocks-right.png"
+            width={417}
+            height={1006}
+            alt="decorative rectangle 2"
+          />
+        </RectangleImg>
       </div>
     </Section>
   )
@@ -50,8 +48,6 @@ const PageMarkup = () => {
 export default PageMarkup
 
 const Section = styled.section`
-  padding-bottom: 400px;
-
   &:before,
 	&:after {
 		content: '';
@@ -66,8 +62,9 @@ const Section = styled.section`
 		z-index: 8;
 	}
 	&:after {
-		height: 300px;
 		background-image: url(/assets/images/block-wall.png);
 		background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 126 / 19;
 	}
 `

@@ -8,42 +8,40 @@ import MousePathSVG from "../../public/assets/svgs/mouse-path.svg"
 
 const PageHero = () => {
   return (
-    <Hero className='relative bg-white px-8 pt-[150px] pb-20'>
-      <div className="xl:max-w-[1500px] md:max-w-6xl mx-auto">
-        <div className="grid gap-8 grid-cols-4 auto-rows-max px-20 z-10">
-          <Title className="col-span-3 font-black pl-10">
-            jamstack <span>101</span>
-          </Title>
+    <Hero className='relative bg-white isolate overflow-hidden pt-20 pb-20 lg:px-8 px-4 lg:pt-[150px]'>
+      <div className="mx-auto max-w-[1500px] md:max-w-6xl">
+        <div className="grid gap-8 grid-cols-4 auto-rows-max px-8 z-10 xl:px-20 xl:px-14">
+          <div className="row-start-1 col-span-3 font-black flex items-center lg:pl-10">
+            <Title>
+              jamstack <span>101</span>
+            </Title>
+          </div>
           <div
-            className="mouse-path-container flex flex-col justify-start items-center col-span-2 row-start-2 pl-20"
+            className="flex flex-col justify-start col-span-4 sm:row-start-2 sm:col-span-3 sm:pl-8 lg:col-span-2 lg:row-start-2 lg:pl-16"
           >
-            <p className="mb-[140px]">
+            <p className="leading-relaxed font-normal text-xl sm:text-2xl lg:max-w-[600px] lg:mb-[60px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu augue massa, tincidunt proin
               nunc viverra tristique tempor, ipsum. At lectus vel pretium tempor ut dui vivamus sit.
             </p>
           </div>
-          <div className="row-start-3 row-span-4 col-start-1 col-span-2 flex flex-col items-center">
+          <div className="col-start-4 row-start-1 row-span-1 flex flex-col items-center sm:col-span-1 sm:row-span-2 sm:row-start-1 sm:mt-10 md:col-span-2 md:row-start-3 md:col-start-1 lg:row-span-3">
             <Mouse />
             <MousePath />
           </div>
-          <RectangleImg className="row-start-2 col-start-3 row-span-3">
-            <Image
+          <RectangleImg className="mt-20 col-start-1 row-start-3 col-span-2 md:col-span-1 lg:row-start-2 lg:row-span-3 lg:mt-0">
+            <img
               src='/assets/images/rect-top-left.png'
-              layout="intrinsic"
               width={420}
               height={944}
               alt="decorative rectangle"
-              className="inline-block"
             />
           </RectangleImg>
-          <RectangleImg className="row-start-1 col-start-4 row-span-3">
-            <Image
+          <RectangleImg className="row-start-3 col-start-3 col-span-2 md:col-start-4 md:col-span-1 lg:row-start-1 lg:row-span-3">
+            <img
               src='/assets/images/rect-top-right.png'
-              layout='intrinsic'
               width={417}
               height={1006}
               alt="decorative rectangle"
-              className="inline-block"
             />
           </RectangleImg>
         </div>
@@ -55,8 +53,6 @@ const PageHero = () => {
 export default PageHero
 
 const Hero = styled.header`
-  isolation: isolate
-
   &:after {
     content: '';
     position: absolute;
@@ -74,22 +70,46 @@ const Title = styled.h1`
   span {
     color: transparent;
     background-image: conic-gradient(
-      from 0.05turn at 35 % 20 %,
-      #fedf8d 0 %,
+      from 0.05turn at 35% 20%,
+      #fedf8d 0%,
       #c8599d,
       #fd8574,
-      #fedf8d 85 %
+      #fedf8d 85%
     );
     background-repeat: no-repeat;
-    background-size: 200 %;
+    background-size: 200%;
+    -webkit-background-clip: text;
     background-clip: text;
   }
 `
 const Mouse = styled(MouseSVG)`
   max-width: 50px;
+
+  @media (max-width: 1023px) {
+    max-width: 42px;
+  }
+  @media (max-width: 767px) {
+    max-width: 30px;
+  }
 `
 const MousePath = styled(MousePathSVG)`
   max-width: 90px;
+  max-height: 35vh;
   position: relative;
   left: 22px;
+
+  @media (max-width: 1023px) {
+    max-width: 75px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 50px;
+    max-height: 250px;
+    left: 12px;
+  }
+  @media (max-width: 639px) {
+    max-width: 50px;
+    max-height: 130px;
+    left: 12px;
+  }
 `

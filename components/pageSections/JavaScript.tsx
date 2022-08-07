@@ -2,57 +2,40 @@ import React from 'react'
 import styled from 'styled-components';
 
 /* Assets */
-import Computer from '../../public/assets/svgs/retro-computer.svg';
+import RetroComputer from '../../public/assets/svgs/retro-computer';
 import NextjsLogo from '../../public/assets/svgs/nextjs-logo.svg';
 import ReactLogo from '../../public/assets/svgs/react-logo.svg';
 import VuejsLogo from '../../public/assets/svgs/vuejs-logo.svg';
 import SvelteLogo from '../../public/assets/svgs/svelte-logo.svg';
 
-
 const PageJavaScript = () => {
   return (
-    <Section className="mx-auto px-12 z-10">
-      <SectionTop className="relative py-[140px] px-10 bg-contain">
-        <h2 className="text-9xl text-center text-white font-black mb-16">javascript</h2>
-        <p className="text-center text-white mx-auto mb-20 max-w-[600px]">
+    <Section className='relative mx-auto lg:px-12 px-4 z-20'>
+      <SectionTop className="relative flex flex-col items-center lg:py-[140px] lg:px-10 py-20 px-8 bg-contain">
+        <h2 className="text-center text-white font-black lg:mb-16 mb-4">javascript</h2>
+        <p className="text-center text-white mx-auto mb-none max-w-[600px] md:order-2 order-3">
           Statically generated pages are brought to life with client-side JavaScript libraries and
           frameworks, such as Algolia and Next.js.
         </p>
-        <Computer />
+        <RetroComputer className="computer lg:w-[60%] w-2/3 max-w-[1280px] md:order-3 order-2 my-10" />
       </SectionTop>
       <SectionBtm className="relative">
         <div className="logos relative flex mx-0 px-0 z-10 w-full">
-          <div className="inline-grid gap-10 grid-cols-1 grid-rows- w-1/4">
-            <span className="row-start-2">
-              <ReactLogo />
-            </span>
-            <span className="row-start-4">
-              <SvelteLogo />
-            </span>
+          <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
+            <ReactLogo className="logo mx-auto hidden lg:inline-block max-h-24 lg:max-h-64 lg:row-start-2" />
+            <SvelteLogo className="logo mx-auto row-start-2 max-h-24 lg:row-start-4 lg:max-h-64" />
           </div>
-          <div className="inline-grid gap-10 grid-cols-1 grid-rows-5 w-1/4">
-            <span className="row-start-2">
-              <NextjsLogo />
-            </span>
-            <span className="row-start-4 opacity-20">
-              <ReactLogo />
-            </span>
+          <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
+            <NextjsLogo className="logo mx-auto row-start-2 lg:max-h-64 max-h-24" />
+            <ReactLogo className="logo mx-auto lg:row-start-4 row-start-1 lg:opacity-20 lg:max-h-64 max-h-24" />
           </div>
-          <div className="inline-grid gap-10 grid-cols-1 grid-rows-5 w-1/4">
-            <span className="row-start-3">
-              <VuejsLogo />
-            </span>
+          <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
+            <VuejsLogo className="logo mx-auto lg:row-start-3 row-start-2 lg:max-h-64 max-h-24" />
           </div>
-          <div className="inline-grid gap-10 grid-cols-1 grid-rows-5 w-1/4">
-            <span className="row-start-1">
-              <NextjsLogo />
-            </span>
-            <span className="row-start-3">
-              <ReactLogo />
-            </span>
-            <span className="row-start-6">
-              <SvelteLogo />
-            </span>
+          <div className="md:visible hidden lg:inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
+            <NextjsLogo className="logo mx-auto lg:row-start-1 lg:max-h-64" />
+            <ReactLogo className="logo mx-auto lg:row-start-3 lg:max-h-64" />
+            <SvelteLogo className="logo mx-auto lg:row-start-6 lg:max-h-64" />
           </div>
         </div>
       </SectionBtm>
@@ -71,15 +54,19 @@ const Section = styled.section`
     top: 0;
     left: 0;
     width: 100%;
-    height: 800px;
+    height: clamp(400px, calc(200px + 35vw), 800px);
     background-color: white;
+
+    @media (max-width: 767px) {
+      height: 400px;
+    }
   }
 `
 
 const SectionTop = styled.div`
   max-width: min(1600px, 100%);
   margin-inline: auto;
-  background-image: url(/assets/images/rectangle-javascript-bg.png);
+  background-image: url(/assets/svgs/rect-js-bg.svg);
   background-repeat: no-repeat;
   position: relative;
   z-index: 6;
@@ -91,21 +78,32 @@ const SectionTop = styled.div`
   }
 
   svg {
-    max-width: min(1280px, 65%);
-    margin: 0 auto;
+    @media (max-width: 767px) {
+      max-width: 800px;
+    }
   }
   
+  @media (max-width: 767px) {
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 50px 50px 46px 46px;
+  }
 `
 const SectionBtm = styled.div`
   margin: -550px auto 0;
   width: 79vw;
-
-  .logos .inline-grid > span {
-    max-height: 280px;
-  }
+  z-index: 6;
 
   .logos svg {
     filter: drop-shadow(0 -105px 45px rgb(255 255 255));
     filter: drop-shadow(0 -105px 45px rgb(255 255 255));
+  }
+
+  @media (max-width: 1023px) {
+    width: 85vw;
+    margin-top: 0;
+  }
+  @media (max-width: 767px) {
+    margin-top: 0;
   }
 `

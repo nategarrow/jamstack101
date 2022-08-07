@@ -32,7 +32,7 @@ body {
     background-repeat: repeat-y;
     background-size: cover;
     background-position: 50%;
-    opacity: 0.05;
+    opacity: 0.0875;
     z-index: 5;
   }
 }
@@ -44,18 +44,27 @@ section {
 
   * {
     position: relative;
-    z-index: 6;
   }
 }
 
-h1 {
-  font-size: clamp(4rem, 5vw, 8.5rem);
-  letter-spacing: -0.039em;
-}
+h1,
 h2 {
-  @extend h1;
+  font-size: clamp(4.5rem, 8vw, 8.5rem);
+  letter-spacing: -0.039em;
+
+  @media (max-width: 767px) {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
 }
 
+h3 {
+  font-size: clamp(3.5rem, 5.5vw, 5.5rem);
+  letter-spacing: -0.039em;
+
+  @media (max-width: 767px) {
+    font-size: clamp(2.25rem, 8vw, 3.5rem);
+  }
+}
 p {
   color: #757575;
   font-size: 18px;

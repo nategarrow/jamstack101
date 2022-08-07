@@ -1,4 +1,3 @@
-import { useRef, useEffect } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { PageHero, PageJavaScript, PageAPI, PageMarkup, PageResults, PageFooter } from '../components/pageSections';

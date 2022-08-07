@@ -9,7 +9,9 @@ type Props = React.PropsWithChildren<{
 const RectangleImg: React.FC<Props> = ({ className = '', children }) => {
   return (
     <ImageContainer className={`${className} max-w-[400px]`}>
-      {children}
+      <span>
+        {children}
+      </span>
     </ImageContainer>
   )
 }
@@ -18,22 +20,25 @@ export default RectangleImg
 
 const ImageContainer = styled.div`
   position: relative;
-  z-index: 11;
 
-  > span {
-    z-index: 12;
+  span img {
+    display: block;
   }
-  &:before {
+
+  span:before {
     content: '';
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 60%;
     border-radius: 60px;
-    width: 100%;
-    height: 65%;
+    width: 90%;
+    height: 75%;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(20px);
     z-index: 100;
-    
+
+    @media (max-width: 767px) {
+      border-radius: 30px;
+    }
   }
 `
