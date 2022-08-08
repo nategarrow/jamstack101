@@ -9,7 +9,7 @@ import MousePathSVG from "../../public/assets/svgs/mouse-path.svg"
 const PageHero = () => {
   return (
     <Hero className='relative bg-white isolate overflow-hidden pt-20 pb-20 lg:px-8 px-4 lg:pt-[150px]'>
-      <div className="mx-auto container md:max-w-6xl">
+      <div className="mx-auto xl:container md:max-w-6xl">
         <div className="grid gap-8 grid-cols-4 auto-rows-max px-8 z-10 xl:px-20 xl:px-14">
           <div className="row-start-1 col-span-3 font-black flex items-center lg:pl-10">
             <Title>
@@ -25,8 +25,8 @@ const PageHero = () => {
             </p>
           </div>
           <div className="col-start-4 row-start-1 row-span-1 flex flex-col items-center sm:col-span-1 sm:row-span-2 sm:row-start-1 sm:mt-10 md:col-span-2 md:row-start-3 md:col-start-1 lg:row-span-3">
-            <Mouse />
-            <MousePath />
+            <Mouse className="max-w-20 max-h-12" />
+            <MousePath className="max-h-72" />
           </div>
           <RectangleImg className="mt-20 col-start-1 row-start-3 col-span-2 md:col-span-1 lg:row-start-2 lg:row-span-3 lg:mt-0">
             <img

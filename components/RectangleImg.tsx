@@ -37,7 +37,7 @@ const ImageContainer = styled.div`
     backdrop-filter: blur(20px);
     z-index: 100;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       border-radius: 30px;
     }
   }

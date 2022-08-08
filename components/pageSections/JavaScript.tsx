@@ -20,7 +20,7 @@ const PageJavaScript = () => {
         <RetroComputer className="computer lg:w-[60%] w-2/3 max-w-[1280px] md:order-3 order-2 my-10" />
       </SectionTop>
       <SectionBtm className="relative">
-        <div className="logos relative flex mx-0 px-0 z-10 w-full">
+        <div className="logos relative flex mx-0 mb-20 px-0 z-10 w-full md:mb-none">
           <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
             <ReactLogo className="logo mx-auto hidden lg:inline-block max-h-24 lg:max-h-64 lg:row-start-2" />
             <SvelteLogo className="logo mx-auto row-start-2 max-h-24 lg:row-start-4 lg:max-h-64" />
@@ -100,11 +100,22 @@ const SectionBtm = styled.div`
     transform: scale(1.3);
   }
 
+  @media (max-width: 1499px) {
+    width: 90vw
+  }
   @media (max-width: 1023px) {
     width: 85vw;
     margin-top: 0;
+
+    .logos svg {
+      transform: scale(2.75);
+    }
   }
   @media (max-width: 767px) {
     margin-top: 0;
+    
+    .logos svg {
+      transform: scale(1.5);
+    }
   }
 `

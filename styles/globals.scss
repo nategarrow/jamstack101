@@ -31,7 +31,7 @@ body {
     left: 50%;
     transform: translate(-50%);
     background-image: url("/assets/svgs/grid-lines.svg");
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
     opacity: 0.0875;
@@ -55,7 +55,10 @@ h2 {
   letter-spacing: -0.039em;
 
   @media (max-width: 767px) {
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(2.2rem, 8vw, 5rem);
+  }
+  @media (min-width: 1699px) {
+    font-size: clamp(5.5rem, 8vw, 8.5rem);
   }
 }
 
