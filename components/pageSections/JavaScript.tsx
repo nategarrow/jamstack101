@@ -7,6 +7,7 @@ import NextjsLogo from '../../public/assets/svgs/nextjs-logo.svg';
 import ReactLogo from '../../public/assets/svgs/react-logo.svg';
 import VuejsLogo from '../../public/assets/svgs/vuejs-logo.svg';
 import SvelteLogo from '../../public/assets/svgs/svelte-logo.svg';
+import JSArrow from '../../public/assets/svgs/js-squiggly-arrow.svg';
 
 const PageJavaScript = () => {
   return (
@@ -17,25 +18,26 @@ const PageJavaScript = () => {
           Statically generated pages are brought to life with client-side JavaScript libraries and
           frameworks, such as Algolia and Next.js.
         </p>
-        <RetroComputer className="computer lg:w-[60%] w-2/3 max-w-[1280px] md:order-3 order-2 my-10" />
+        <Arrow className="hidden lg:block" />
+        <RetroComputer className="computer lg:w-[60%] w-2/3 max-w-4xl md:order-3 order-2 my-10" />
       </SectionTop>
       <SectionBtm className="relative">
         <div className="logos relative flex mx-0 mb-20 px-0 z-10 w-full md:mb-none">
           <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
-            <ReactLogo className="logo mx-auto hidden lg:inline-block max-h-24 lg:max-h-64 lg:row-start-2" />
-            <SvelteLogo className="logo mx-auto row-start-2 max-h-24 lg:row-start-4 lg:max-h-64" />
+            <ReactLogo className="logo mx-auto hidden lg:inline-block max-h-24 lg:max-h-64 lg:row-start-2 fill-white text-white hover:fill-react-blue hover:text-react-blue" />
+            <SvelteLogo className="logo mx-auto row-start-2 max-h-24 lg:row-start-4 lg:max-h-64 fill-white hover:fill-svelte-orange" />
           </div>
           <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
-            <NextjsLogo className="logo mx-auto row-start-2 lg:max-h-64 max-h-24" />
-            <ReactLogo className="logo mx-auto lg:row-start-4 row-start-1 lg:opacity-20 lg:max-h-64 max-h-24" />
+            <NextjsLogo className="logo mx-auto row-start-2 lg:max-h-64 max-h-24 fill-white hover:fill-next-blue" />
+            <ReactLogo className="logo mx-auto lg:row-start-4 row-start-1 lg:opacity-20 lg:max-h-64 max-h-24 fill-white text-white hover:fill-react-blue hover:text-react-blue" />
           </div>
           <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
-            <VuejsLogo className="logo mx-auto lg:row-start-3 row-start-2 lg:max-h-64 max-h-24" />
+            <VuejsLogo className="logo mx-auto lg:row-start-3 row-start-2 lg:max-h-64 max-h-24 fill-white hover:fill-vue-green" />
           </div>
           <div className="md:visible hidden lg:inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
-            <NextjsLogo className="logo mx-auto lg:row-start-1 lg:max-h-64" />
-            <ReactLogo className="logo mx-auto lg:row-start-3 lg:max-h-64" />
-            <SvelteLogo className="logo mx-auto lg:row-start-6 lg:max-h-64" />
+            <NextjsLogo className="logo mx-auto lg:row-start-1 lg:max-h-64 fill-white hover:fill-next-blue" />
+            <ReactLogo className="logo mx-auto lg:row-start-3 lg:max-h-64 fill-white text-white hover:fill-react-blue hover:text-react-blue" />
+            <SvelteLogo className="logo mx-auto lg:row-start-6 lg:max-h-64 fill-white hover:fill-svelte-orange" />
           </div>
         </div>
       </SectionBtm>
@@ -62,7 +64,14 @@ const Section = styled.section`
     }
   }
 `
-
+const Arrow = styled(JSArrow)`
+  position: absolute;
+  left: 75%;
+  top: 20%;
+  width: 15vw;
+  max-width: 300px;
+  aspect-ratio: 248 / 467;
+`
 const SectionTop = styled.div`
   max-width: min(1600px, 100%);
   margin-inline: auto;

@@ -9,6 +9,10 @@ module.exports = {
       colors: {
         beige: "#efffe2",
         "bright-green": "#EFFFE2;",
+        "react-blue": "#61dafb",
+        "vue-green": "#42b883",
+        "svelte-orange": "#ff3e00",
+        "next-blue": "#0070f3",
       },
     },
   },

@@ -35,7 +35,7 @@ const SectionBtm = styled.div`
   &:before {
 		bottom: 40%;
     aspect-ratio: 2560 / 364;
-		background-image: url(/assets/images/api-squiggly-bg.png);
+		background-image: url(/assets/images/api-squiggly-bg.webp);
 		background-size: cover;
 		background-repeat: no-repeat;
 		z-index: 3;

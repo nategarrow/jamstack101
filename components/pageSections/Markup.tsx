@@ -27,11 +27,11 @@ const PageMarkup = () => {
           </p>
         </div>
         <div className='col-start-4 row-start-1 row-span-1 flex flex-col items-center justify-center sm:col-span-1 sm:row-start-1 sm:mt-10 md:col-span-2 md:row-start-3 md:col-start-1 lg:row-span-3'>
-          <Image src="/assets/images/toppled-blocks.png" alt="Colorful toppled blocks" width={735} height={513} className="max-w-[400px]" />
+          <Image src="/assets/images/toppled-blocks.webp" alt="Colorful toppled blocks" width={735} height={513} className="max-w-[400px]" />
         </div>
         <RectangleImg className="col-start-1 row-start-3 col-span-2 lg:mt-0 mt-20 md:col-span-1 lg:row-start-2 lg:row-span-3">
           <img
-            src="/assets/images/rect-blocks-left.png"
+            src="/assets/images/rect-blocks-left.webp"
             width={420}
             height={944}
             alt="decorative rectangle 1"
@@ -39,7 +39,7 @@ const PageMarkup = () => {
         </RectangleImg>
         <RectangleImg className="row-start-3 col-start-3 col-span-2 md:col-start-4 md:col-span-1 lg:row-start-1 lg:row-span-3">
           <img
-            src="/assets/images/rect-blocks-right.png"
+            src="/assets/images/rect-blocks-right.webp"
             width={417}
             height={1006}
             alt="decorative rectangle 2"
@@ -67,7 +67,7 @@ const Section = styled.section`
 		z-index: 8;
 	}
 	&:after {
-		background-image: url(/assets/images/block-wall.png);
+		background-image: url(/assets/images/block-wall.webp);
 		background-size: contain;
     background-repeat: no-repeat;
     aspect-ratio: 126 / 19;

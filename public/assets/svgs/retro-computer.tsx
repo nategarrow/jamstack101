@@ -4,7 +4,7 @@ interface Props {
   className?: string
 }
 
-const images = ['/assets/images/monogram-io.png', '/assets/images/nategarrow-tech.png']
+const images = ['/assets/images/monogram-io.webp', '/assets/images/nategarrow-tech.webp']
 
 const RetroComputer: React.FC<Props> = ({ className = "" }) => {
   const [hover, setHover] = useState<boolean>(false)
