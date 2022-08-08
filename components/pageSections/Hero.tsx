@@ -28,16 +28,16 @@ const PageHero = () => {
             <Mouse className="max-w-20 max-h-12" />
             <MousePath className="max-h-72" />
           </div>
-          <RectangleImg className="mt-20 col-start-1 row-start-3 col-span-2 md:col-span-1 lg:row-start-2 lg:row-span-3 lg:mt-0">
-            <img
+          <RectangleImg position="left">
+            <Image
               src='/assets/images/rect-top-left.webp'
               width={420}
               height={944}
               alt="decorative rectangle"
             />
           </RectangleImg>
-          <RectangleImg className="row-start-3 col-start-3 col-span-2 md:col-start-4 md:col-span-1 lg:row-start-1 lg:row-span-3">
-            <img
+          <RectangleImg position="right">
+            <Image
               src='/assets/images/rect-top-right.webp'
               width={417}
               height={1006}
