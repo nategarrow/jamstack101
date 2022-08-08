@@ -1,5 +1,7 @@
+// imported Font Families
 @import url(https://rsms.me/inter/inter.css);
 
+// Global Styles
 html,
 body {
   padding: 0;
@@ -49,7 +51,7 @@ section {
 
 h1,
 h2 {
-  font-size: clamp(4.5rem, 8vw, 8.5rem);
+  font-size: clamp(4.5rem, 8vw, 7rem);
   letter-spacing: -0.039em;
 
   @media (max-width: 767px) {
@@ -77,13 +79,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     color-scheme: dark;
-//   }
-//   body {
-//     color: white;
-//     background: black;
-//   }
-// }

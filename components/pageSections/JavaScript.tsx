@@ -11,7 +11,7 @@ import SvelteLogo from '../../public/assets/svgs/svelte-logo.svg';
 const PageJavaScript = () => {
   return (
     <Section className='relative mx-auto lg:px-12 px-4 z-20'>
-      <SectionTop className="relative flex flex-col items-center lg:py-[140px] lg:px-10 py-20 px-8 bg-contain">
+      <SectionTop className="container relative flex flex-col items-center lg:py-[140px] lg:px-10 py-20 px-8 bg-contain">
         <h2 className="text-center text-white font-black lg:mb-16 mb-4">javascript</h2>
         <p className="text-center text-white mx-auto mb-none max-w-[600px] md:order-2 order-3">
           Statically generated pages are brought to life with client-side JavaScript libraries and
@@ -97,6 +97,7 @@ const SectionBtm = styled.div`
   .logos svg {
     filter: drop-shadow(0 -105px 45px rgb(255 255 255));
     filter: drop-shadow(0 -105px 45px rgb(255 255 255));
+    transform: scale(1.3);
   }
 
   @media (max-width: 1023px) {

@@ -7,6 +7,8 @@ const PageResults = () => {
   const [hasRun, setHasRun] = useState<boolean>(false)
   const [isOnScreen, setIsOnScreen] = useState<boolean>(false)
 
+  // determine if ref is on screen,
+  // start animations when ref is X distance to top (similar to GSAP ScrollTrigger)
   useEffect(() => {
     const observer = new IntersectionObserver((sections, observer) => {
       const section = sections[0]
@@ -15,6 +17,7 @@ const PageResults = () => {
     observer.observe(resultsRef.current);
   }, []);
 
+  // get distance of ref to top of viewport
   useEffect(() => {
     const getDistToTop = () => {
       const distanceToTop = resultsRef.current.getBoundingClientRect().top;
@@ -27,9 +30,9 @@ const PageResults = () => {
   return (
     <section className="relative mx-auto ">
       <div ref={resultsRef}>
-        <AuditScoresContainer className="relative -mt-4 px-8 py-14 md:py-[90px] lg:-mt-[100px] lg:py-[140px]">
+        <AuditScoresContainer className="container relative -mt-4 px-8 py-14 mx-auto md:py-[90px] lg:-mt-[100px] lg:py-[140px]">
           <h3 className="text-beige font-black text-center mb-16">top audit scores</h3>
-          <div className="grid gap-8 grid-cols-2 my-14 sm:grid-cols-4 lg:my-20">
+          <div className="grid gap-8 grid-cols-2 my-14 mx-auto max-w-screen-xl sm:grid-cols-4 lg:my-20">
             <Score hasRun={hasRun} start={30} end={100} delay={0} title="Performance" className="ease-in-out duration-200 hover:opacity-60" />
             <Score hasRun={hasRun} start={30} end={100} delay={100} title="Accessibility" className="ease-in-out duration-200 hover:opacity-60 " />
             <Score hasRun={hasRun} start={30} end={100} delay={200} title="SEO" className="ease-in-out duration-200 hover:opacity-60 " />

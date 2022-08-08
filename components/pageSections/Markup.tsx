@@ -2,13 +2,18 @@ import Image from 'next/image';
 import React from 'react'
 import styled from 'styled-components';
 import RectangleImg from '../RectangleImg';
+import { Canvas } from '@react-three/fiber'
+import { PerspectiveCamera } from "@react-three/drei"
+import { EffectComposer, Bloom } from "@react-three/postprocessing"
+import { JamstackSphere } from '../objects/JamstackSphere'
+import { KernelSize } from 'postprocessing'
 
 /* Assets */
 
 const PageMarkup = () => {
   return (
     <Section className="bg-white isolate overflow-x-hidden mx-auto pb-36 pt-20 px-4 sm:pb-48 md:pb-72 lg:px-8 lg:pt-[100px] xl:pb-96">
-      <div className="grid gap-8 grid-cols-4 auto-rows-max xl:px-20 lx:px-14 px-8 z-10">
+      <div className="container grid gap-8 grid-cols-4 auto-rows-max xl:px-20 lx:px-14 px-8 mx-auto z-10">
         <div className="row-start-1 col-span-3 font-black lg:pl-10 flex items-center">
           <h2>
             markup
@@ -22,7 +27,7 @@ const PageMarkup = () => {
           </p>
         </div>
         <div className='col-start-4 row-start-1 row-span-1 flex flex-col items-center justify-center sm:col-span-1 sm:row-start-1 sm:mt-10 md:col-span-2 md:row-start-3 md:col-start-1 lg:row-span-3'>
-          <Image src="/assets/images/toppled-blocks.png" alt="Colorful toppled blocks" width={981} height={684} className="max-w-[400px]" />
+          <Image src="/assets/images/toppled-blocks.png" alt="Colorful toppled blocks" width={735} height={513} className="max-w-[400px]" />
         </div>
         <RectangleImg className="col-start-1 row-start-3 col-span-2 lg:mt-0 mt-20 md:col-span-1 lg:row-start-2 lg:row-span-3">
           <img

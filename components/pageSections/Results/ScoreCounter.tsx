@@ -1,3 +1,9 @@
+
+import React, { useEffect, useRef, useState } from 'react'
+import styled from 'styled-components';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
 interface ScoreProps {
   hasRun: boolean
   start: number
@@ -7,33 +13,31 @@ interface ScoreProps {
   className?: string
 }
 
-import React, { useEffect, useRef, useState } from 'react'
-import styled from 'styled-components';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-
 const Score = ({ start = 0, end = 100, delay = 0, hasRun = false, title, className = '' }: ScoreProps) => {
   const ref = useRef(null)
   const [isDone, setIsDone] = useState<boolean>(false)
   const [counter, setCounter] = useState<number>(start)
 
-
   useEffect(() => {
+    // update % value based on start val, end val, and delay
     const startTimer = () => {
       const timer = setInterval(() => {
         if (counter >= end) {
           setIsDone(true)
           clearInterval(timer)
         }
+        // if counter !== 100, increment up to 100
         if (!isDone) setCounter(prevCounter => Math.min(prevCounter += 2, 100))
       }, 30)
+
+      // clear the timer when it hits 100
       if (isDone) clearInterval(timer)
     }
     if (hasRun) setTimeout(startTimer, delay)
   }, [isDone, counter, hasRun])
 
   return <div className={`${className} flex justify-center items-center cursor-pointer`} title={title}>
-    <ScoreSpan ref={ref} className="text-2xl font-bold text-bright-green lg:text-4xl xl:text-5xl">
+    <ScoreSpan ref={ref} className="text-2xl font-bold text-bright-green lg:text-4xl xl:text-5xl max-w-[240px]">
       <CircularProgressbar
         value={counter * .96}
         text={`${counter}`}
