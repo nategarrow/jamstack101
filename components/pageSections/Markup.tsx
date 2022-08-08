@@ -2,13 +2,6 @@ import Image from 'next/image';
 import React from 'react'
 import styled from 'styled-components';
 import RectangleImg from '../RectangleImg';
-import { Canvas } from '@react-three/fiber'
-import { PerspectiveCamera } from "@react-three/drei"
-import { EffectComposer, Bloom } from "@react-three/postprocessing"
-import { JamstackSphere } from '../objects/JamstackSphere'
-import { KernelSize } from 'postprocessing'
-
-/* Assets */
 
 const PageMarkup = () => {
   return (

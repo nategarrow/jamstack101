@@ -18,7 +18,7 @@ const PageJavaScript = () => {
           Statically generated pages are brought to life with client-side JavaScript libraries and
           frameworks, such as Algolia and Next.js.
         </p>
-        <Arrow className="hidden lg:block" />
+        <Arrow className="hidden max-h-24 lg:block lg:max-h-64 " />
         <RetroComputer className="computer lg:w-[60%] w-2/3 max-w-4xl md:order-3 order-2 my-10" />
       </SectionTop>
       <SectionBtm className="relative">
@@ -70,6 +70,7 @@ const Arrow = styled(JSArrow)`
   top: 20%;
   width: 15vw;
   max-width: 300px;
+  max-height: 565px;
   aspect-ratio: 248 / 467;
 `
 const SectionTop = styled.div`
