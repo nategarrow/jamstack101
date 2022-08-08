@@ -20,8 +20,7 @@ html {
 body {
   position: relative;
   z-index: 1;
-  background: #151515;
-
+  background: #1c1f21;
   &:before {
     content: "";
     position: absolute;
@@ -34,7 +33,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-    opacity: 0.0875;
+    opacity: 0.175;
     z-index: 5;
   }
 }
@@ -71,7 +70,6 @@ h3 {
   }
 }
 p {
-  color: #757575;
   font-size: 18px;
   font-weight: 300;
   line-height: 195.5%;

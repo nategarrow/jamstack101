@@ -5,7 +5,7 @@ import RectangleImg from '../RectangleImg';
 
 const PageMarkup = () => {
   return (
-    <Section className="bg-white isolate overflow-x-hidden mx-auto pb-36 pt-20 px-4 pb-48 sm:pb-64 md:pb-72 lg:px-8 lg:pt-[100px] xl:pb-[40vh]">
+    <Section className="bg-white  isolate overflow-x-hidden mx-auto pb-36 pt-20 px-4 pb-[34vw] md:pb-[26vw] lg:px-8 lg:pt-[100px]">
       <div className="container grid gap-8 grid-cols-4 auto-rows-max xl:px-20 lx:px-14 px-8 mx-auto z-10">
         <div className="row-start-1 col-span-3 font-black lg:pl-10 flex items-center">
           <h2>

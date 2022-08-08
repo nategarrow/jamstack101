@@ -10,6 +10,7 @@ import SvelteLogo from '../../public/assets/svgs/svelte-logo.svg';
 import JSArrow from '../../public/assets/svgs/js-squiggly-arrow.svg';
 
 const PageJavaScript = () => {
+
   return (
     <Section className='relative mx-auto lg:px-12 px-4 z-20'>
       <SectionTop className="container relative flex flex-col items-center lg:py-[140px] lg:px-10 py-20 px-8 bg-contain">
@@ -29,15 +30,15 @@ const PageJavaScript = () => {
           </div>
           <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
             <NextjsLogo className="logo mx-auto row-start-2 lg:max-h-64 max-h-24 fill-white hover:fill-next-blue" />
-            <ReactLogo className="logo mx-auto lg:row-start-4 row-start-1 lg:opacity-20 lg:max-h-64 max-h-24 fill-white text-white hover:fill-react-blue hover:text-react-blue" />
+            <ReactLogo className="logo mx-auto lg:row-start-4 row-start-1 lg:opacity-40 lg:max-h-64 max-h-24 fill-white text-white hover:fill-react-blue hover:text-react-blue" />
           </div>
           <div className="inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
             <VuejsLogo className="logo mx-auto lg:row-start-3 row-start-2 lg:max-h-64 max-h-24 fill-white hover:fill-vue-green" />
           </div>
           <div className="md:visible hidden lg:inline-grid gap-10 grid-cols-1 lg:grid-rows-5 grid-rows-2 lg:w-1/4 w-1/3">
-            <NextjsLogo className="logo mx-auto lg:row-start-1 lg:max-h-64 fill-white hover:fill-next-blue" />
+            <NextjsLogo className="logo mx-auto lg:row-start-1 lg:max-h-64 fill-white hover:fill-next-blue opacity-30" />
             <ReactLogo className="logo mx-auto lg:row-start-3 lg:max-h-64 fill-white text-white hover:fill-react-blue hover:text-react-blue" />
-            <SvelteLogo className="logo mx-auto lg:row-start-6 lg:max-h-64 fill-white hover:fill-svelte-orange" />
+            <SvelteLogo className="logo mx-auto lg:row-start-6 lg:max-h-64 fill-white hover:fill-svelte-orange opacity-30" />
           </div>
         </div>
       </SectionBtm>

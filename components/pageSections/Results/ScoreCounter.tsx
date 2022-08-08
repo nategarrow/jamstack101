@@ -34,7 +34,7 @@ const Score = ({ start = 0, end = 100, delay = 0, hasRun = false, title, classNa
       if (isDone) clearInterval(timer)
     }
     if (hasRun) setTimeout(startTimer, delay)
-  }, [isDone, counter, hasRun])
+  }, [isDone, end, counter, hasRun, delay])
 
   return <div className={`${className} flex justify-center items-center cursor-pointer`} title={title}>
     <ScoreSpan ref={ref} className="text-2xl font-bold text-bright-green lg:text-4xl xl:text-5xl max-w-[240px]">
